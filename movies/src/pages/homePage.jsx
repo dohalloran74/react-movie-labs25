@@ -1,14 +1,19 @@
 import React from "react";
-//import Grid from "@mui/material/Grid2";
 import Grid from "@mui/material/Grid";
+//import Grid from "@mui/material/Grid2";
+//import Grid2 from "@mui/material/Unstable_Grid2";
+import MovieCard from "../components/movieCard";
 
 const HomePage = (props) => {
   const movies = props.movies;
 
   return (
-    <Grid container sx={{ padding: "20px" }}>
-      <Grid item xs={12}>
+    <Grid container>
+      <Grid size={12}>
         <h1> HomePage </h1>
+      </Grid>
+      <Grid size={3}>
+        <MovieCard movie={movies[0]} />
       </Grid>
     </Grid>
   );
