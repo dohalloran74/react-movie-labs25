@@ -12,7 +12,6 @@ import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews";
 
-
 const root = {
   display: "flex",
   justifyContent: "center",
@@ -59,6 +58,18 @@ const MovieDetails = ({ movie }) => {
         />
         <Chip label={`Released: ${movie.release_date}`} />
       </Paper>
+
+      <Paper component="ul" sx={{ ...root }}>
+        <li>
+          <Chip label="production countries" sx={{ ...chip }} color="primary" />
+        </li>
+        {movie.production_countries.map((p) => (
+          <li key={p.name}>
+            <Chip label={p.name} sx={{ ...chip }} />
+          </li>
+        ))}
+      </Paper>
+
       <Fab
         color="secondary"
         variant="extended"
